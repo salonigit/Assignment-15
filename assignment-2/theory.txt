@@ -1,90 +1,35 @@
-Loops--
-The JavaScript loops are used to iterate the piece of code using for, while, do while or for-in loops. It makes the code compact. It is mostly used in array.
-There are 3 types of loops in JavaScript.
-1
-1) JavaScript For loop
-The JavaScript for loop iterates the elements for the fixed number of times. It should be used if number of iteration is known. The syntax of for loop is given below.
-for (initialization; condition; increment)  
-{  
-    code to be executed  
-}  
+Variables--
+A variable is a named container used for storing values. A piece of information that we might reference multiple times can be stored in a variable for later use or modification. In JavaScript, the value contained inside a variable can be any JavaScript data type, including a number, string, or object.
+Example -var username = "sammy_shark";
+Variable names are known as identifiers in JavaScript. We discussed several of the rules of naming identifiers in Understanding Syntax and Code Structure in JavaScript, summarized here:
+1. Variable names can consist only of letters (a-z), numbers (0-9), dollar sign symbols ($), and underscores (_)
+2. Variable names cannot contain any whitespace characters (tabs or spaces)
+3. Numbers cannot begin the name of any variable
+4. There are several reserved keywords which cannot be used as the name of a variable
+5. Variable names are case sensitive.
+avaScript has three different keywords to declare a variable, which adds an extra layer of intricacy to the language. The differences between the three are based on scope, hoisting, and reassignment.
+                Keyword	Scope	  Hoisting	   Can Be Reassigned	Can Be Redeclared
+var	            Function scope	    Yes	            Yes	                Yes
+let	            Block scope	        No	            Yes	                No
+const	        Block scope	        No	            No	                No
 
-2) JavaScript while loop
-The JavaScript while loop iterates the elements for the infinite number of times. It should be used if number of iteration is not known. The syntax of while loop is given below.
-while (condition)  
-{  
-    code to be executed  
-}  
+Context--
+The this keyword is a very important concept in JavaScript, and also a particularly confusing one to both new developers and those who have experience in other programming languages. In JavaScript, this is a reference to an object. The object that this refers to can vary, implicitly based on whether it is global, on an object, or in a constructor, and can also vary explicitly based on usage of the Function prototype methods bind, call, and apply.
+There are four main contexts in which the value of this can be implicitly inferred:
+1. the global context
+2. as a method within an object
+3. as a constructor on a function or class
+4. as a DOM event handler
 
-3) JavaScript do while loop
-The JavaScript do while loop iterates the elements for the infinite number of times like while loop. But, code is executed at least once whether condition is true or false. The syntax of do while loop is given below.
-do{  
-    code to be executed  
-}while (condition);  
+Call and Apply--
+call and apply are very similar—they invoke a function with a specified this context, and optional arguments. The only difference between call and apply is that call requires the arguments to be passed in one-by-one, and apply takes the arguments as an array.
+oth call and apply are one-time use methods—if you call the method with the this context it will have it, but the original function will remain unchanged.
+Sometimes, you might need to use a method over and over with the this context of another object, and in that case you could use the bind method to create a brand new function with an explicitly bound this.
 
-JavaScript Functions--
-JavaScript functions are used to perform operations. We can call JavaScript function many times to reuse the code.
+Prototype--
+JavaScript is often described as a prototype-based language — to provide inheritance, objects can have a prototype object, which acts as a template object that it inherits methods and properties from.
+An object's prototype object may also have a prototype object, which it inherits methods and properties from, and so on. This is often referred to as a prototype chain, and explains why different objects have properties and methods defined on other objects available to them.
+In JavaScript, a link is made between the object instance and its prototype (its __proto__ property, which is derived from the prototype property on the constructor), and the properties and methods are found by walking up the chain of prototypes.
 
-There are mainly two advantages of JavaScript functions.
-
-Code reusability: We can call a function several times so it save coding.
-Less coding: It makes our program compact. We don’t need to write many lines of code each time to perform a common task.
-
-The syntax of declaring function is given below.
-
-function functionName([arg1, arg2, ...argN]){  
- //code to be executed  
-}  
-JavaScript Functions can have 0 or more arguments.
-
-JavaScript Objects--
-A javaScript object is an entity having state and behavior (properties and method). For example: car, pen, bike, chair, glass, keyboard, monitor etc.
-
-JavaScript is an object-based language. Everything is an object in JavaScript.
-
-JavaScript is template based not class based. Here, we don't create class to get the object. But, we direct create objects.
-
-There are 3 ways to create objects.
-
-1. By object literal
-2. By creating instance of Object directly (using new keyword)
-3. By using an object constructor (using new keyword)
-
-JavaScript Operators--
-JavaScript operators are symbols that are used to perform operations on operands. For example:
-
-There are following types of operators in JavaScript.
-
-1. Arithmetic Operators
-2. Comparison (Relational) Operators
-3. Bitwise Operators
-4. Logical Operators
-5. Assignment Operators
-6. Special Operators
-
-JavaScript Array--
-JavaScript array is an object that represents a collection of similar type of elements.
-
-There are 3 ways to construct array in JavaScript
-
-1) JavaScript array literal
-The syntax of creating array using array literal is given below:
-var arrayname=[value1,value2.....valueN];  
-
-2) JavaScript Array directly (new keyword)
-The syntax of creating array directly is given below:
-
-var arrayname=new Array();  
-Here, new keyword is used to create instance of array.
-
-3) JavaScript array constructor (new keyword)
-Here, you need to create instance of array by passing arguments in constructor so that we don't have to provide value explicitly.
-
-The example of creating object by array constructor is given below.
-
-<script>  
-var emp=new Array("Jai","Vijay","Smith");  
-for (i=0;i<emp.length;i++){  
-document.write(emp[i] + "<br>");  
-}  
-</script>  
+Function() constructor--
+The Function constructor creates a new Function object. Calling the constructor directly can create functions dynamically, but suffers from security and similar (but far less significant) performance issues to Global_Objects/eval. However, unlike eval, the Function constructor creates functions which execute in the global scope only.
