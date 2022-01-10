@@ -1,6 +1,6 @@
 function printans(a) {
   for (const [key, value] of Object.entries(a)) {
-    process.stdout.write(`${key}${value} `);
+    process.stdout.write(`${key}${value}`);
   }
 }
 function count(test) {
