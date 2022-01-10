@@ -1,0 +1,61 @@
+forEach--
+The forEach() method calls a function for each element in an array.
+The forEach() method is not executed for empty elements.
+Syntax
+array.forEach(function(currentValue, index, arr), thisValue)
+
+map()--
+map() creates a new array from calling a function for every array element.
+It calls a function once for each element in an array.
+It does not execute the function for empty elements
+map() does not change the original array.
+Syntax
+array.map(function(currentValue, index, arr), thisValue)
+
+filter--
+The filter() method creates a new array filled with elements that pass a test provided by a function.
+This method does not execute the function for empty elements.
+The filter() method does not change the original array.
+Syntax
+array.filter(function(currentValue, index, arr), thisValue)
+
+object.assign()--
+Object.assign() Method 
+Among the Object constructor methods, there is a method Object.assign() which is used to copy the values and properties from one or more source objects to a target object. It invokes getters and setters since it uses both [[Get]] on the source and [[Set]] on the target. It returns the target object which has properties and values copied from the target object. Object.assign() does not throw on null or undefined source values. 
+Syntax: 
+Object.assign(target, ...sources)
+
+Object.keys()
+The Object.keys() method returns an array of a given object's own enumerable property names, iterated in the same order that a normal loop would.
+Object.keys() returns an array whose elements are strings corresponding to the enumerable properties found directly upon object. The ordering of the properties is the same as that given by looping over the properties of the object manually.
+Syntax
+Object.keys(obj)
+
+Hoisting--
+JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
+Hoisting allows functions to be safely used in code before they are declared.
+Variable and class declarations are also hoisted, so they too can be referenced before they are declared. Note that doing so can lead to unexpected errors, and is not generally recommended.
+Function hoisting
+One of the advantages of hoisting is that it lets you use a function before you declare it in your code.
+Variable hoisting
+Hoisting works with variables too, so you can use a variable in code before it is declared and/or initialized.
+However JavaScript only hoists declarations, not initializations! This means that initialization doesn't happen until the associated line of code is executed, even if the variable was originally initialized then declared, or declared and initialized in the same line.
+Until that point in the execution is reached the variable has its default initialization (undefined for a variable declared using var, otherwise uninitialized).Variables declared with let and const are also hoisted but, unlike var, are not initialized with a default value. An exception will be thrown if a variable declared with let or const is read before it is initialized.
+
+Closures--
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
+Callback function--
+A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+
+What are Promises?
+A promise is basically an advancement of callbacks in Node. While developing an application you may encounter that you are using a lot of nested callback functions.This is what happens due to the nesting of callback functions. Now imagine if you need to perform multiple nested operations like this. That would make your code messy and very complex. In Node.js world, this problem is called “Callback Hell”. To resolve this issue we need to get rid of the callback functions whilst nesting. This is where Promises come into the picture. A Promise in Node means an action which will either be completed or rejected. In case of completion, the promise is kept and otherwise, the promise is broken. So as the word suggests either the promise is kept or it is broken. And unlike callbacks, promises can be chained.
+
+First-class Function--
+A programming language is said to have First-class functions when functions in that language are treated like any other variable. For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable.
+
+Difference between regular functions and arrow functions--
+1. Use of this keyword
+Unlike regular functions, arrow functions do not have their own this.
+2. Using new keyword
+Regular functions created using function declarations or expressions are ‘constructible’ and ‘callable’. Since regular functions are constructible, they can be called using the ‘new’ keyword. However, the arrow functions are only ‘callable’ and not constructible. Thus, we will get a run-time error on trying to construct a non-constructible arrow functions using the new keyword.
