@@ -1,15 +1,15 @@
-function printans(a) {
+function printAns(a) {
   for (const [key, value] of Object.entries(a)) {
     process.stdout.write(`${key}${value}`);
   }
 }
-function count(test) {
+function countOccurence(string) {
   let a = {};
-  for (let i = 0; i < test.length; i++) {
+  for (let i = 0; i < string.length; i++) {
     a[test[i]] ? a[test[i]]++ : a[test[i]] = 1;
   }
-  printans(a);
+  printAns(a);
 
 }
-let test = "helloworld";
-count(test);
+let string = "aabbaaaccbb";
+countOccurence(string);
