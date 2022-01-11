@@ -1,0 +1,38 @@
+What is git?
+Git is a fast, scalable, most commomnly used version control system which have large command set that provides  high-level operations and also full access to internals.
+
+What is the versioning control system?
+A version control system, or VCS, tracks the history of changes as people and teams collaborate on projects together. As developers make changes to the project, any earlier version of the project can be recovered at any time.We can find out following things:
+Which changes were made?
+Who made the changes?
+When were the changes made?
+
+What is the use of git?
+Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development.Git tracks the changes you make to files, so you have a record of what has been done, and you can revert to specific versions should you ever need to. Git also makes collaboration easier, allowing changes by multiple people to all be merged into one source. 
+
+What is Stash and unstash area in git?
+Sometimes you want to switch the branches, but you are working on an incomplete part of your current project. You don't want to make a commit of half-done work. Git stashing allows you to do so. The git stash command enables you to switch branches without committing the current branch.And the area where half done work is stored is called Stash area. Generally, the stash's meaning is "store something safely in a hidden place." The sense in Git is also the same for stash; Git temporarily saves your data safely without committing.Git allows the user to re-apply the previous commits by using git stash pop command. The popping option removes the changes from stash and applies them to your working file.
+
+What is Concept of branches in git?
+Git branching allows developers to diverge from the production version of code to fix a bug or add a feature. Developers create branches to work with a copy of the code without modifying the existing version. You create branches to isolate your code changes, which you test before merging to the main branch.
+
+What is .gitignore file?
+The .gitignore file is a text file that tells Git which files or folders to ignore in a project. A local .gitignore file is usually placed in the root directory of a project. You can also create a global .gitignore file and any entries in that file will be ignored in all of your Git repositories.
+
+What is nvm and npm?
+NVM is a node.js version manager. It provides easy installation, switching between versions and retains globally installed packages for each version. NPM is a package manager, which help you install libraries, plugins, frameworks and applications.
+
+What is git clone?
+Creates a copy of an existing Git repository. Cloning is the most common way for developers to obtain a working copy of a central repository.
+
+What is git checkout -b branch_name?
+This command is used to create a new branch and also checkout.
+
+What is git checkout branch_name?
+This command is used to switch branch.
+
+What is git reset --soft?
+This form resets the current branch head to <commit> and possibly updates the index and the working tree depending on <mode>.--soft Does not touch the index file or the working tree at all (but resets the head to <commit>, just like all modes do). This leaves all your changed files "Changes to be committed", as git status would put it.
+
+What is git reset --hard?
+This form resets the current branch head to <commit> and possibly updates the index and the working tree depending on <mode>.--hard Resets the index and working tree. Any changes to tracked files in the working tree since <commit> are discarded. Any untracked files or directories in the way of writing any tracked files are simply deleted.
