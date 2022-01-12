@@ -1,0 +1,44 @@
+What is backend and frontend?
+The term “front-end” refers to the user interface, while “back-end” means the server, application and database that work behind the scenes to deliver information to the user.The user enters a request through the interface.It’s then verified and communicated to the server, which pulls the necessary data from the database and sends it back to the user.
+Front End Development: The part of a website that the user interacts with directly is termed the front end. It is also referred to as the ‘client side’ of the application. It includes everything that users experience directly: text colors and styles, images, graphs and tables, buttons, colors, and navigation menu. HTML, CSS, and JavaScript are the languages used for Front End development. The structure, design, behavior, and content of everything seen on browser screens when websites, web applications, or mobile apps are opened up, is implemented by front End developers. Responsiveness and performance are two main objectives of the Front End. The developer must ensure that the site is responsive i.e. it appears correctly on devices of all sizes no part of the website should behave abnormally irrespective of the size of the screen.
+Backend Development: Backend is the server-side of the website. It stores and arranges data, and also makes sure everything on the client-side of the website works fine. It is the part of the website that you cannot see and interact with. It is the portion of software that does not come in direct contact with the users. The parts and characteristics developed by backend designers are indirectly accessed by users through a front-end application. Activities, like writing APIs, creating libraries, and working with system components without user interfaces or even systems of scientific programming, are also included in the backend.
+
+What is an API?
+An API is a set of programming code that enables data transmission between one software product and another. 
+
+What is the need of an API?
+APIs are needed to bring applications together in order to perform a designed function built around sharing data and executing pre-defined processes.
+They work as the middle man, allowing developers to build new programmatic interactions between the various applications people and businesses use on a daily basis.
+
+What is REST?
+REST APIs, also known as RESTful APIs, stands for Representational State Transfer. REST APIs have grown in popularity of late, as a part of Web Services. REST APIs are designed for developers to perform requests and receive responses via HTTP functions. There are four different HTTP commands that REST is based on. These include GET, PUT, POST, and DELETE. When you pull up Instagram and search for the latest and greatest meme of the day, that app is using a REST API.
+
+What is Node.js?
+Node.js is a server-side platform built on Google Chrome's JavaScript Engine (V8 Engine). Node.js was developed by Ryan Dahl in 2009.
+Node.js is an open source, cross-platform runtime environment for developing server-side and networking applications. Node.js applications are written in JavaScript, and can be run within the Node.js runtime on OS X, Microsoft Windows, and Linux.
+Node.js also provides a rich library of various JavaScript modules which simplifies the development of web applications using Node.js to a great extent.
+Node.js = Runtime Environment + JavaScript Library
+
+Features of Node.js:
+Following are some of the important features that make Node.js the first choice of software architects.
+Asynchronous and Event Driven − All APIs of Node.js library are asynchronous, that is, non-blocking. It essentially means a Node.js based server never waits for an API to return data. The server moves to the next API after calling it and a notification mechanism of Events of Node.js helps the server to get a response from the previous API call.
+Very Fast − Being built on Google Chrome's V8 JavaScript Engine, Node.js library is very fast in code execution.
+Single Threaded but Highly Scalable − Node.js uses a single threaded model with event looping. Event mechanism helps the server to respond in a non-blocking way and makes the server highly scalable as opposed to traditional servers which create limited threads to handle requests. Node.js uses a single threaded program and the same program can provide service to a much larger number of requests than traditional servers like Apache HTTP Server.
+No Buffering − Node.js applications never buffer any data. These applications simply output the data in chunks.
+License − Node.js is released under the MIT license.
+
+Difference Between Local Storage, Session Storage, And Cookies
+
+Local Storage	                                    Session Storage	                                    Cookies 
+The storage capacity of local storage is 5MB/10MB	The storage capacity of session storage is 5MB	    The storage capacity of Cookies is 4KB
+As it is not session-based, it must be deleted via 	It’s session-based and works per window or tab.     Cookies expire based on the setting and working javascript or manually.                             This means that data is stored only for the          per tab and window 
+                                                    duration of a session, i.e., until the browser 
+                                                    (or tab) is closed	
+The client  can only read local storage	            The client can only read local storage	             Both clients and servers can read and write the 
+                                                                                                        cookie.
+There is no transfer of data to the server	        There is no transfer of data to the server	          Data transfer to the server is exist
+There are fewer old browsers that support it	    There are fewer old browsers that support it	    It is supported by all the browser including 
+                                                                                                        older browser
+
+What is http verbs [GET, POST, PUT, DELETE]?
+The primary or most-commonly-used HTTP verbs (or methods, as they are properly called) are POST, GET, PUT, PATCH, and DELETE. These correspond to create, read, update, and delete (or CRUD) operations, respectively.
