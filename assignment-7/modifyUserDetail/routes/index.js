@@ -1,42 +1,17 @@
 const express = require('express')
-const file = require("../data.json")
-const fs = require("fs")
-const path = require('path')
 const router = express.Router()
-
+const { getRequest, allDataRequest ,postRequest} = require("../controllers/controller")
 
 router.get('/data', (req, res) => {
-    fs.readFile(path.join(__dirname, '../data.json'), 'utf8', function readFileCallback(err, data) {
-        console.log(__dirname)
-        if (err) {
-            console.log(err)
-            return
-        }
-        const obj = JSON.parse(data);
-        return res.json({ message: "data fetched", obj })
-    })
+    return getRequest(req, res);
 })
 
+router.get('/allData', (req, res) => {
+    return allDataRequest(req, res);
+})
 
 router.post('/data', (req, res) => {
-    const newData = req.body
-    fs.readFile(path.join(__dirname, '../data.json'), 'utf8', function readFileCallback(err, data) {
-        if (err) {
-            console.log(err);
-        } else {
-            obj = JSON.parse(data);
-            obj.users.push(newData);
-            json = JSON.stringify(obj);
-            fs.writeFile(path.join(__dirname, '../data.json'), json, 'utf8', (error, result) => {
-                if (error) {
-                    res.json({ message: "error" })
-                    return;
-                }
-                return res.json({ message: "data created", obj })
-            });
-        }
-    });
+    return postRequest(req, res);
 })
-
 
 module.exports = router
