@@ -10,9 +10,22 @@ const server = http.createServer((req, res) => {
   const urlparse = url.parse(req.url, true);
 
   if (urlparse.pathname == '/projects' && req.method == 'GET') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify(projects, null, 2));
+    
+    const search = urlparse.search;
+    if (search) {
+      const [, query] = urlparse.search.split('?');
+      const data = parse(query);
+
+      let requiredData = projects.filter(project => project.id == data.id);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify(requiredData, null, 2));
+    }
+    else {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify(projects, null, 2));
+    }
   }
+
   if (urlparse.pathname == '/projects' && req.method == 'POST') {
     req.on('data', data => {
 
