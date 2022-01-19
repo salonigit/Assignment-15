@@ -1,55 +1,43 @@
-const file = require("../data.json")
-const fs = require("fs")
-const path = require('path')
-const { getAllDataService, getDataService, postService, putService, deleteService } = require("../services/services")
+const { getDataService } = require("../services/getDataService")
+const { getAllDataService } = require("../services/getAllDataServices")
+const { postService } = require("../services/postService")
+const { putService } = require("../services/putService")
+const { deleteService } = require("../services/deleteService")
 
-const getRequest = function (req, res) {
-    const id = req.query.id
-    if (!id) {
-        return res.json({ message: "Error. Please Provide Id" })
+const getRequest = async function (req, res) {
+    let result = await getDataService(req);
+    if (result.error) {
+        return res.send(result.error)
     }
-    fs.readFile(path.join(__dirname, '../data.json'), 'utf8', function readFileCallback(err, data) {
-        if (err) {
-            return res.json({ message: "Data Not Found" })
-        }
-        return getDataService(data,id ,res);
-    })
+    return res.send(result.success)
 }
-const allDataRequest = function (req, res) {
-    fs.readFile(path.join(__dirname, '../data.json'), 'utf8', function readFileCallback(err, data) {
-        if (err) {
-            return
-        }
-        return getAllDataService(data, res);
-    })
+const allDataRequest = async function (req, res) {
+    let result = await getAllDataService(req);
+    if (result.error) {
+        return res.send(result.error)
+    }
+    return res.send(result.success)
 }
-const postRequest = function (req, res) {
-    const newData = req.body
-    fs.readFile(path.join(__dirname, '../data.json'), 'utf8', function readFileCallback(err, data) {
-        if (err) {
-        } else {
-            return postService(data, res,newData)
-        }
-    });
+const postRequest = async function (req, res) {
+    let result = await postService(req);
+    if (result.error) {
+        return res.send(result.error)
+    }
+    return res.send(result.success)
 }
-const putRequest = function (req,res) {
-    const newData = req.body
-    fs.readFile(path.join(__dirname, '../data.json'), 'utf8', function readFileCallback(err, data) {
-        if (err) {
-            console.log(err);
-        } else {
-            return putService(data, res,newData);
-        }
-    });
+const putRequest = async function (req, res) {
+    let result = await putService(req);
+    if (result.error) {
+        return res.send(result.error)
+    }
+    return res.send(result.success)
 }
-const deleteRequest = function (req, res) {
-    const id = req.body.id
-    fs.readFile(path.join(__dirname, '../data.json'), 'utf8', function readFileCallback(err, data) {
-        if (err) {
-        } else {
-            return deleteService(data, res,id);
-        }
-    });
+const deleteRequest = async function (req, res) {
+    let result = await deleteService(req);
+    if (result.error) {
+        return res.send(result.error)
+    }
+    return res.send(result.success)
 }
 
 module.exports = {
