@@ -2,14 +2,23 @@ const file = require("../data.json")
 const fs = require("fs")
 const path = require('path')
 
-const getDataService = function (data,id, res) {
+const getDataService = function (id) {
+    fs.readFile(path.join(__dirname, '../data.json'), 'utf8', function readFileCallback(err, data) {
+        if (err) {
+            // return res.json({ message: "Data Not Found" })
+            return err;
+        }
+        
     const obj = JSON.parse(data);
     obj.map((doc, i) => {
         if (doc.id == id) {
-            return res.json({ message: "data fetched", doc })
+            // return res.json({ message: "data fetched", doc })
+            return "Data fetched";
         }
     })
-    return res.json({ message: "Data Not Found" })
+    // return res.json({ message: "Data Not Found" })
+    return "Data not found"
+})
 }
 const getAllDataService = function (data, res) {
     const obj = JSON.parse(data);
