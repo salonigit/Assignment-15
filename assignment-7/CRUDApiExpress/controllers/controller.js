@@ -8,14 +8,12 @@ const getRequest = function (req, res) {
     if (!id) {
         return res.json({ message: "Error. Please Provide Id" })
     }
-    const result = getDataService(id);
-    if(result==err){
-        res.json(error);
-    }
-    else{
-        res.json(result)
-    }
-    
+    fs.readFile(path.join(__dirname, '../data.json'), 'utf8', function readFileCallback(err, data) {
+        if (err) {
+            return res.json({ message: "Data Not Found" })
+        }
+        return getDataService(data,id ,res);
+    })
 }
 const allDataRequest = function (req, res) {
     fs.readFile(path.join(__dirname, '../data.json'), 'utf8', function readFileCallback(err, data) {
