@@ -14,7 +14,7 @@ const postService = async function (req) {
             result = { error: "Error" };
         }
     })
-    result = { success: obj }
+    result = { success: newData}
     return result;
 }
 
