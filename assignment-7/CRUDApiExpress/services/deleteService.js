@@ -17,7 +17,7 @@ const deleteService = async function (req) {
             return;
         }
     });
-    return result = { success: newObj }
+    return result = { success: "Deleted Successfully" }
 }
 
 module.exports = {

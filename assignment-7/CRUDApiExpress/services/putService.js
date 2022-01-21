@@ -19,7 +19,7 @@ const putService = async function (req) {
             return;
         }
     });
-    return result = { success: obj }
+    return result = { success: "Data updated Successfully" }
 }
 
 module.exports = {
