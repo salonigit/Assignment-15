@@ -1,0 +1,61 @@
+Javascript ES6 :
+ECMAScript 2015 or ES6 is the term used to describe the latest stable iteration of the programing language commonly called JavaScript. 
+ECMAScript 2015 was the second major revision to JavaScript.
+ECMAScript 2015 is also known as ES6 and ECMAScript 6.
+
+JavaScript Let
+The let keyword was introduced in ES6 (2015).
+Variables defined with let cannot be Redeclared.
+Variables defined with let must be Declared before use.
+Variables defined with let have Block Scope.
+
+JavaScript Const
+The const keyword was introduced in ES6 (2015).
+Variables defined with const cannot be Redeclared.
+Variables defined with const cannot be Reassigned.
+Variables defined with const have Block Scope.
+
+Arrow Functions
+Arrow functions allows a short syntax for writing function expressions.
+You don't need the function keyword, the return keyword, and the curly brackets.
+
+Example
+// ES5
+var x = function(x, y) {
+   return x * y;
+}
+
+// ES6
+const x = (x, y) => x * y;
+
+Arrow functions do not have their own this. They are not well suited for defining object methods.
+Arrow functions are not hoisted. They must be defined before they are used.
+
+JavaScript Classes
+ECMAScript 2015, also known as ES6, introduced JavaScript Classes.
+JavaScript Classes are templates for JavaScript Objects.
+
+Use the keyword class to create a class.
+Always add a method named constructor():
+
+Syntax
+class ClassName {
+  constructor() { ... }
+}
+
+What is Database?
+A database is an organized collection of data, so that it can be easily accessed and managed.
+You can organize data into tables, rows, columns, and index it to make it easier to find relevant information.
+The main purpose of the database is to operate a large amount of information by storing, retrieving, and managing data.
+There are many databases available like MySQL, Sybase, Oracle, MongoDB, Informix, PostgreSQL, SQL Server, etc.
+
+What is ORM?
+ORM is Object Relational Mapping, basically a technique to query or perform CRUD (Create, Read, Update, Delete) operations to the database, mainly RDBMS (Relational Databases), using an object-oriented paradigm.
+With the help of ORM, you don’t actually need to use SQL at all. You can directly interact with the database and perform queries in the same language you are using for your back-end code!
+
+What is ODM?
+ODM is Object Document Mapping. It is like an ORM for non-relational databases or distributed databases such as MongoDB, i.e., mapping an object model and NoSQL database (document databases, graph database, etc.).
+Note: In document-oriented NoSQL databases, documents are stored in JSON format in the collection (a table in SQL databases is like a collection in NoSQL databases).
+
+ORM vs ODM :
+The key difference between the two is the type of database these data-mappers are used for. Suppose we have a relational database such as PostgreSQL, MySQL, etc. in that case, we will use an ORM. On the other hand, for non-relational databases such as MongoDB, Cassandra, Redis, etc. we will use an ODM to achieve the same results.
