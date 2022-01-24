@@ -2,7 +2,7 @@ import file from "../data.json"
 import fs from "fs"
 import path from "path"
 
-const putService = async ((req) =>{
+const putService = ((req) =>{
     const newData = req.body
     let result = {}
     let data = fs.readFileSync(path.join(__dirname, '../data.json'), 'utf8')
@@ -12,7 +12,7 @@ const putService = async ((req) =>{
             originalData.name = newData.name
         }
     })
-    json = JSON.stringify(obj);
+    let json = JSON.stringify(obj);
     fs.writeFile(path.join(__dirname, '../data.json'), json, 'utf8', (err, res) => {
         if (err) {
             result = { error: "error" }
@@ -22,6 +22,4 @@ const putService = async ((req) =>{
     return result = { success: "Data updated Successfully" }
 })
 
-module.exports = {
-    putService
-}
+export default putService
