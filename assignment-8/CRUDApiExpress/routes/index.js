@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { mwBasicAuth } = require("../middleware/basicAuth")
-const { getRequest, postRequest, putRequest, deleteRequest, allDataRequest } = require("../controllers/controller")
+const { getRequest, postRequest,allDataRequest,putRequest,deleteRequest} = require("../controllers/controller")
 
 router.use('/', mwBasicAuth)
 router.get('/data', getRequest)
