@@ -1,44 +1,39 @@
-import {getDataService} from "../services/getDataService"
-import {getAllDataService} from "../services/getAllDataServices"
-import {postService} from "../services/postService"
-import {putService} from "../services/putService"
-import {deleteService} from "../services/deleteService"
+import getDataService from "../services/getDataService"
+import getAllDataService from "../services/getAllDataServices"
+import postService from "../services/postService"
+import putService from "../services/putService"
+import deleteService from "../services/deleteService"
 
-async function getRequest (req,res){
-    let result = await getDataService(req);
+const getRequest =async (req,res)=>{
+    const result = await getDataService(req);
     if (result) {
         return res.send(result)
     }
     return res.send("Error")
 }
-async function allDataRequest(req,res){
-    let result = await getAllDataService(req);
-    console.log(result)
+const allDataRequest=async(req,res)=>{
+    const result = await getAllDataService();
     if (result) {
         return res.send(result)
     }
-    else{
     return res.send("Error occured")
-    }
 }
-async function postRequest (req, res) {
-    let result = await postService(req);
+const postRequest= async (req, res)=> {
+    const result = await postService(req);
     if (result) {
         return res.send(result)
     }
-    else{
     return res.send("Error occured")
-    }
 }
-async function putRequest (req, res) {
-    let result =  await putService(req);
+const putRequest =async(req, res)=> {
+    const result =  await putService(req);
     if (result) {
         return res.send(result)
     }
     return res.send("Error")
 }
-async function deleteRequest(req, res) { 
-    let result =  await deleteService(req);
+const deleteRequest= async(req, res)=> { 
+    const result =  await deleteService(req);
     if (result) {
         return res.send(result)
     }

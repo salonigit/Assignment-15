@@ -1,18 +1,17 @@
-const db = require("../models");
+import db from "../models"
 const user = db.users;
 
-async function postService(req) {
-  if(!req.body.name && !req.body.age){
+const postService = async (req) => {
+  const { name, age } = req.body;
+  if (!name && !age) {
     return "Please provide data"
   }
   const newUser = {
-    name: req.body.name,
-    age: req.body.age,
+    name: name,
+    age: age,
   };
   await user.create(newUser)
   return newUser;
 }
 
-module.exports = {
-  postService
-}
+export default postService

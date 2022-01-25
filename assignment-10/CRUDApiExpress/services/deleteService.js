@@ -1,8 +1,8 @@
-const db = require("../models");
+import db from "../models"
 const user = db.users;
 
-async function deleteService(req) {
-  const id = req.body.id;
+const deleteService = async (req) => {
+  const { id } = req.body;
   if (!id) {
     return "Please enter id"
   }
@@ -12,6 +12,4 @@ async function deleteService(req) {
   return "Deleted Successfull"
 }
 
-module.exports = {
-  deleteService
-}
+export default deleteService

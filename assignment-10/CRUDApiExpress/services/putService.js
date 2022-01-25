@@ -1,12 +1,12 @@
-const db = require("../models");
+import db from "../models"
 const user = db.users;
-const Op = db.Sequelize.Op;
 
-async function putService(req) {
-  const id = req.body.id;
+const putService=async(req)=> {
+  const {id} = req.body;
   if (!id) {
     return "Please provide id"
   }
+  
   await user.update(req.body, {
     where: { id: id }
   })
@@ -17,6 +17,4 @@ async function putService(req) {
   return result
 }
 
-module.exports = {
-  putService
-}
+export default putService

@@ -1,5 +1,4 @@
 import express from "express"
-// import router from express.Router()
 const router = express.Router()
 import { mwBasicAuth } from "../middleware/basicAuth"
 import { getRequest, postRequest, putRequest, deleteRequest, allDataRequest } from "../controllers/controller"

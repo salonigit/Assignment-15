@@ -1,8 +1,8 @@
-const db = require("../models");
+import db from "../models"
 const user = db.users;
 
-async function getDataService(req) {
-  const id = req.query.id;
+const getDataService = async (req) => {
+  const { id } = req.query;
   if (!id) {
     return "Please provide id"
   }
@@ -13,6 +13,4 @@ async function getDataService(req) {
   return result
 }
 
-module.exports = {
-  getDataService
-}
+export default getDataService

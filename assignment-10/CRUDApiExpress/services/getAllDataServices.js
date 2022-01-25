@@ -1,11 +1,9 @@
-const db = require("../models");
+import db from "../models";
 const user = db.users;
 
-async function getAllDataService(res) {
+const getAllDataService = async () => {
   const result = await user.findAll()
   return result
 }
 
-module.exports = {
-  getAllDataService
-}
+export default getAllDataService
