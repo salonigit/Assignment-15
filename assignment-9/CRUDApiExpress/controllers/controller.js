@@ -4,41 +4,41 @@ import postService from "../services/postService"
 import putService from "../services/putService"
 import deleteService from "../services/deleteService"
 
-const getRequest = ((req, res) =>{
-    let result =getDataService(req);
-    if (result.error) {
-        return res.send(result.error)
+const getRequest =async (req, res) =>{
+    const result =await getDataService(req);
+    if (result) {
+        return res.send(result)
     }
-    return res.send(result.success)
-})
-const allDataRequest = ((req, res) =>{
-    let result =  getAllDataService();
-    if (result.error) {
-        return res.send(result.error)
+    return res.send("Error")
+}
+const allDataRequest =async (req, res) =>{
+    const result = await getAllDataService();
+    if (result) {
+        return res.send(result)
     }
-    return res.send(result.success)
-})
-const postRequest = ((req, res) =>{
-    let result = postService(req);
-    if (result.error) {
-        return res.send(result.error)
+    return res.send("Error")
+}
+const postRequest = async(req, res) =>{
+    const result = await postService(req);
+    if (result) {
+        return res.send(result)
     }
-    return res.send(result.success)
-})
-const putRequest = ((req, res) =>{
-    let result = putService(req);
-    if (result.error) {
-        return res.send(result.error)
+    return res.send("Error")
+}
+const putRequest = async (req, res) =>{
+    const result = await putService(req);
+    if (result) {
+        return res.send(result)
     }
-    return res.send(result.success)
-})
-const deleteRequest = ((req, res) =>{ 
-    let result =  deleteService(req);
-    if (result.error) {
-        return res.send(result.error)
+    return res.send("Error")
+}
+const deleteRequest = async(req, res) =>{ 
+    const result = await deleteService(req);
+    if (result) {
+        return res.send(result)
     }
-    return res.send(result.success)
-})
+    return res.send("Error")
+}
 
 module.exports = {
     getRequest, postRequest, putRequest, deleteRequest, allDataRequest

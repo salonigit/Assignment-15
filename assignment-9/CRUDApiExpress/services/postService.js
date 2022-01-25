@@ -1,21 +1,22 @@
-import file from "../data.json"
 import fs from "fs"
 import path from "path"
 
-const postService = ((req)=> {
+const postService =async(req)=> {
     const newData = req.body
-    var result = {}
-    let data = fs.readFileSync(path.join(__dirname, '../data.json'), 'utf8')
-    let obj = JSON.parse(data);
+    const {id}=newData
+    if(!id){
+        return "Please Enter id"
+    }
+    const data = await fs.readFileSync(path.join(__dirname, '../data.json'), 'utf8')
+    let obj = await JSON.parse(data);
     obj.push(newData);
-     let json = JSON.stringify(obj);
-    fs.writeFileSync(path.join(__dirname, '../data.json'), json, 'utf8', function (err) {
+    const json = await JSON.stringify(obj);
+    await fs.writeFileSync(path.join(__dirname, '../data.json'), json, 'utf8', function (err) {
         if (err) {
-            result = { error: "Error" };
+            return "Error";
         }
     })
-    result = { success: newData}
-    return result;
-})
+    return newData;
+}
 
 export default postService

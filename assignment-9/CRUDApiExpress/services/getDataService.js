@@ -1,22 +1,19 @@
-import file from "../data.json"
 import fs from "fs"
 import path from "path"
 
-const getDataService = ((req)=> {
-    const id = req.query.id
+const getDataService = async(req)=> {
+    const {id} = req.query
     if (!id) {
-        return { error: "Error.Please Provide Id" }
+        return "Error.Please Provide Id"
     }
-    let result = {}
-    const data = fs.readFileSync(path.join(__dirname, '../data.json'), 'utf8')
-    const obj = JSON.parse(data)
+    const data = await fs.readFileSync(path.join(__dirname, '../data.json'), 'utf8')
+    const obj = await JSON.parse(data)
     for (let i = 0; i < obj.length; i++) {
         if (obj[i].id == id) {
-            result = { success: obj[i].name }
-            return result
+            return obj[i].name
         }
     }
-    return result = { error: "Error.Given Id is not valid" }
-})
+    return "Error.Given Id is not valid"
+}
 
 export default getDataService

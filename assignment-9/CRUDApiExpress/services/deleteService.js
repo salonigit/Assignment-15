@@ -1,23 +1,23 @@
-import file from "../data.json"
 import fs from "fs"
 import path from "path"
 
-const deleteService = ((req)=> {
-    const id = req.body.id
-    var result = {}
-    let data = fs.readFileSync(path.join(__dirname, '../data.json'), 'utf8')
-    let obj = JSON.parse(data);
-    const newObj = obj.filter((originalData, i) => {
+const deleteService =async (req)=> {
+    const {id} = req.body
+    if(!id){
+        return "Please enter id"
+    }
+    const data = await fs.readFileSync(path.join(__dirname, '../data.json'), 'utf8')
+    const obj = await JSON.parse(data);
+    const newObj = obj.filter((originalData) => {
         return originalData.id != id
     })
-    let json = JSON.stringify(newObj);
-    fs.writeFile(path.join(__dirname, '../data.json'), json, 'utf8', (err, res) => {
+    const json = await JSON.stringify(newObj);
+    await fs.writeFile(path.join(__dirname, '../data.json'), json, 'utf8', (err, res) => {
         if (err) {
-            result = { error: "error" }
             return;
         }
     });
-    return result = { success: "Deleted Successfully" }
-})
+    return "Deleted Successfully" 
+}
 
 export default deleteService
