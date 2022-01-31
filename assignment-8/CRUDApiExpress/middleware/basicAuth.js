@@ -1,15 +1,15 @@
 const auth = require('basic-auth')
+const user =require('../data.json')
 
 const mwBasicAuth = async (req, res, next) => {
-    const user = await auth(req)
-    const username = 'test'
-    const password = '123456'
-    if (user && user.name.toLowerCase() === username.toLowerCase() && user.pass === password) {
+    const User = await auth(req)
+    for(let i=0; i<l;i++){
+    if (User && User.name.toLowerCase() === user[i].userName.toLowerCase() && user[i].passward === User.password) {
         next()
-    } else {
-        res.statusCode = 401
-        res.end('Access denied')
-    }
+        return
+        }
+    } 
+    res.end('Access denied')
 }
 
 module.exports = { mwBasicAuth }

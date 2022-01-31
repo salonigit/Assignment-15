@@ -1,45 +1,37 @@
-const { getDataService } = require("../services/getDataService")
-const { getAllDataService } = require("../services/getAllDataServices")
-const { postService } = require("../services/postService")
-const { putService } = require("../services/putService")
-const { deleteService } = require("../services/deleteService")
+const { getUserService } = require('../services/getUserService')
+const { addUserService } = require("../services/addUserService")
+const { updateUserService } = require("../services/updateUserService")
+const { deleteUserService } = require("../services/deleteUserService")
 
-const getRequest = async function (req, res) {
-    let result = await getDataService(req);
-    if (result.error) {
-        return res.send(result.error)
+const getUser = async function (req, res) {
+    const result = await getUserService(req);
+    if (result) {
+        return res.send(result)
     }
-    return res.send(result.success)
+    return res.send("Error")
 }
-const allDataRequest = async function (req, res) {
-    let result = await getAllDataService(req);
-    if (result.error) {
-        return res.send(result.error)
+const addUser = async function (req, res) {
+    const result = await addUserService(req);
+    if (result) {
+        return res.send(result)
     }
-    return res.send(result.success)
+    return res.send("Error")
 }
-const postRequest = async function (req, res) {
-    let result = await postService(req);
-    if (result.error) {
-        return res.send(result.error)
+const updateUser = async function (req, res) {
+    const result = await updateUserService(req);
+    if (result) {
+        return res.send(result)
     }
-    return res.send(result.success)
+    return res.send("Error")
 }
-const putRequest = async function (req, res) {
-    let result = await putService(req);
-    if (result.error) {
-        return res.send(result.error)
+const deleteUser = async function (req, res) {
+    const result = await deleteUserService(req);
+    if (result) {
+        return res.send(result)
     }
-    return res.send(result.success)
-}
-const deleteRequest = async function (req, res) {
-    let result = await deleteService(req);
-    if (result.error) {
-        return res.send(result.error)
-    }
-    return res.send(result.success)
+    return res.send("Error")
 }
 
 module.exports = {
-    getRequest, postRequest, putRequest, deleteRequest, allDataRequest
+    getUser, addUser, updateUser, deleteUser
 }
