@@ -1,5 +1,5 @@
-import db from "../models"
-const user = db.userDetails;
+import db from '../models'
+const user = db.userDetails
 
 const getUserService = async (req) => {
   const { id } = req.query;

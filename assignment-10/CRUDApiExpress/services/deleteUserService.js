@@ -1,4 +1,4 @@
-import db from "../models"
+import db from '../models'
 const user = db.userDetails;
 
 const deleteUserService = async (req) => {
