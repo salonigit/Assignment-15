@@ -1,0 +1,5 @@
+What is the use of migration  in sequelize?
+A Migration in Sequelize is javascript file which exports two functions, up and down, that dictate how to perform the migration and undo it. You define those functions manually, but you don't call them manually; they will be called automatically by the CLI. In these functions, you should simply perform whatever queries you need, with the help of sequelize.query and whichever other methods Sequelize provides to you. There is no extra magic beyond that.
+
+What is the use of seed option in sequelize?
+To manage all data migrations you can use seeders. Seed files are some change in data that can be used to populate database table with sample data or test data. Let's create a seed file which will add a demo user to our User table. This command will create a seed file in seeders folder.
