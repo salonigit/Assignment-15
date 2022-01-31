@@ -1,11 +1,14 @@
 import db from "../models"
-const user = db.users;
+const user = db.userDetails;
 
-const getDataService = async (req) => {
-  const { id } = req.query;
+const updateUserService=async(req)=> {
+  const {id} = req.body;
   if (!id) {
     return "Please provide id"
   }
+  await user.update(req.body, {
+    where: { id: id }
+  })
   const result = await user.findByPk(id)
   if (!result) {
     return "Please provide valid id"
@@ -13,4 +16,4 @@ const getDataService = async (req) => {
   return result
 }
 
-export default getDataService
+export default updateUserService

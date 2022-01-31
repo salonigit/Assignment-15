@@ -1,7 +1,7 @@
 import db from "../models"
-const user = db.users;
+const user = db.userDetails;
 
-const postService = async (req) => {
+const addUserService = async (req) => {
   const { name, age } = req.body;
   if (!name && !age) {
     return "Please provide data"
@@ -14,4 +14,4 @@ const postService = async (req) => {
   return newUser;
 }
 
-export default postService
+export default addUserService

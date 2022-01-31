@@ -1,7 +1,7 @@
 import db from "../models"
-const user = db.users;
+const user = db.userDetails;
 
-const deleteService = async (req) => {
+const deleteUserService = async (req) => {
   const { id } = req.body;
   if (!id) {
     return "Please enter id"
@@ -12,4 +12,4 @@ const deleteService = async (req) => {
   return "Deleted Successfull"
 }
 
-export default deleteService
+export default deleteUserService

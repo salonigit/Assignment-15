@@ -1,39 +1,31 @@
-import getDataService from "../services/getDataService"
-import getAllDataService from "../services/getAllDataServices"
-import postService from "../services/postService"
-import putService from "../services/putService"
-import deleteService from "../services/deleteService"
+import getUserService from '../services/getUserService'
+import addUserService from '../services/addUserService'
+import updateUserService from '../services/updateUserService'
+import deleteUserService from '../services/deleteUserService'
 
-const getRequest =async (req,res)=>{
-    const result = await getDataService(req);
+const getUser =async (req,res)=>{
+    const result = await getUserService(req);
     if (result) {
         return res.send(result)
     }
     return res.send("Error")
 }
-const allDataRequest=async(req,res)=>{
-    const result = await getAllDataService();
+const addUser= async (req, res)=> {
+    const result = await addUserService(req);
     if (result) {
         return res.send(result)
     }
     return res.send("Error occured")
 }
-const postRequest= async (req, res)=> {
-    const result = await postService(req);
-    if (result) {
-        return res.send(result)
-    }
-    return res.send("Error occured")
-}
-const putRequest =async(req, res)=> {
-    const result =  await putService(req);
+const updateUser =async(req, res)=> {
+    const result =  await updateUserService(req);
     if (result) {
         return res.send(result)
     }
     return res.send("Error")
 }
-const deleteRequest= async(req, res)=> { 
-    const result =  await deleteService(req);
+const deleteUser= async(req, res)=> { 
+    const result =  await deleteUserService(req);
     if (result) {
         return res.send(result)
     }
@@ -41,5 +33,5 @@ const deleteRequest= async(req, res)=> {
 }
 
 module.exports = {
-    getRequest, postRequest, putRequest, deleteRequest, allDataRequest
+    getUser, addUser, updateUser, deleteUser
 }
