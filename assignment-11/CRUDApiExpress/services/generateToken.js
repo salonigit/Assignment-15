@@ -1,21 +1,29 @@
-import jwt from 'jwt-simple'
+import jwt from 'jsonwebtoken'
 import db from '../models'
+import dotenv from 'dotenv'
+import bcrypt from 'bcrypt'
 const users = db.users
-const cfg = require("../config/Jwtconfig");
+
+dotenv.config()
 
 const generateToken = async (req, res) => {
     if (req.body.email && req.body.password) {
         const email = req.body.email;
-        const password = req.body.password;
-        const user = await users.findAll({ where: { email: email, password: password } })
+        const user = await users.findOne({ where: { email: email } })
         if (user) {
-            const payload = {
-                email: user.email
-            };
-            const token = jwt.encode(payload, cfg.jwtSecret);
-            res.json({
-                token: token
-            });
+            const validPassword = await bcrypt.compare(req.body.password, user.dataValues.password)
+            if (validPassword) {
+                const payload = {
+                    email: user.email
+                };
+                const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn : '1d' });
+                res.json({
+                    token: token
+                });
+            }
+            else {
+                res.send("Wrong password")
+            }
         } else {
             res.sendStatus(401);
         }

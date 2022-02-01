@@ -2,7 +2,7 @@ import db from '../models'
 const user = db.users;
 
 const updateUserService = async (email, req) => {
-  if (req.body.email == email) {
+  if (req.body.email != email) {
     return "Please provide correct email"
   }
   await user.update(req.body, {

@@ -6,16 +6,17 @@ const router = express.Router()
 const auth = require("../middleware/auth")()
 
 router.use('/', consoleRequest)
+
 router.post('/token', function (req, res) {
     generateToken(req, res)
 });
 
-router.get('/getUser', auth.authenticate(), function (req, res) {
-    getUser(req.user.email, res)
-});
-
 router.post('/signUp', function (req, res) {
     addUser(req, res)
+});
+
+router.get('/getUser', auth.authenticate(), function (req, res) {
+    getUser(req.user.email, res)
 });
 
 router.put('/updateUser', auth.authenticate(), function (req, res) {
