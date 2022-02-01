@@ -1,3 +1,4 @@
+import comment from '../models/comments'
 module.exports = (sequelize, DataTypes) => {
     const tutorial = sequelize.define("tutorial", {
       title: {
@@ -7,6 +8,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING
       }
     });
-  
+    
     return tutorial;
-  };
+  }
