@@ -1,0 +1,26 @@
+Node.js process.exit() Method : 
+The process.exit() method is used to end the process which is running at the same time with an exit code in NodeJS.
+Syntax:
+process.exit( code )
+Parameter:  This function accepts single parameter as mentioned above and described below:
+Code: It can be either 0 or 1. 0 means end the process without any kind of failure and 1 means end the process with some failure.
+Return value: It does not return any value.
+
+What is a UUID?
+A Universally Unique Identifier (UUID) is a 36-character alphanumeric label used to provide a unique identity to any collection of information within a computing system. Owing to their extremely low probability of duplication, UUIDs are a widely adopted tool for giving persistent and unique identities to practically every type of data imaginable. 
+
+Version 1 and 2 
+Version 1 UUIDs are sometimes referred to as being “time-based” since they incorporate the datetime at which they were generated. In addition to the datetime, the final section of these UUIDs is derived from the media access controller (MAC) address of the generating device. They consist of five separate sections separated by hyphens.
+
+Version 4
+Version 4 UUIDs are probably the simplest to understand, and perhaps the most frequently used as well. These UUIDs are simply randomly generated values (derived from a cryptographically secure generator) that do not contain any namespace, device, or time-based information. 
+They look like this: adbbf6bd-1746-4545-a3ce-8b153a7a31b2
+The only non-random character in this value is the “4” in the first position of the third section (after the second hyphen), denoting that this is a v4 UUID. Other than that, every other character is just a random number from 0-9, or lowercase letter from a-z. 
+
+Session Based Authentication
+In the session based authentication, the server will create a session for the user after the user logs in. The session id is then stored on a cookie on the user’s browser. While the user stays logged in, the cookie would be sent along with every subsequent request. The server can then compare the session id stored on the cookie against the session information stored in the memory to verify user’s identity and sends response with the corresponding state!
+
+Token Based Authentication
+Many web applications use JSON Web Token (JWT) instead of sessions for authentication. In the token based application, the server creates JWT with a secret and sends the JWT to the client. The client stores the JWT (usually in local storage) and includes JWT in the header with every request. The server would then validate the JWT with every request from the client and sends response.
+
+The biggest difference here is that the user’s state is not stored on the server, as the state is stored inside the token on the client side instead. Most of the modern web applications use JWT for authentication for reasons including scalability and mobile device authentication.
