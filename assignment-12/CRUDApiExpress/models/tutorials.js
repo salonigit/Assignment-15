@@ -1,13 +1,12 @@
-import comment from '../models/comments'
 module.exports = (sequelize, DataTypes) => {
-    const tutorial = sequelize.define("tutorial", {
-      title: {
-        type: DataTypes.STRING
-      },
-      description: {
-        type: DataTypes.STRING
-      }
-    });
-    
-    return tutorial;
-  }
+  const tutorial = sequelize.define('tutorial', {
+    title: {
+      type: DataTypes.STRING
+    },
+    description: {
+      type: DataTypes.STRING
+    }
+  });
+
+  return tutorial;
+}

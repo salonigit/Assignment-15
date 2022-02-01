@@ -1,5 +1,5 @@
-import express from "express"
-import { getComment, getTutorial, addComment, addTutorial, deleteComment, deleteTutorial } from "../controllers/controller"
+import express from 'express'
+import { getComment, getTutorial, addComment, addTutorial, deleteComment, deleteTutorial } from '../controllers/controller'
 const router = express.Router()
 
 router.get('/comment', getComment)
