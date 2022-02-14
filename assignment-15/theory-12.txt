@@ -1,0 +1,5 @@
+What is minification in JavaScript?
+Minification, also known as minimization, is the process of removing all unnecessary characters from JavaScript source code without altering its functionality. This includes the removal of whitespace, comments, and semicolons, along with the use of shorter variable names and functions.
+
+What Is Obfuscation?
+Obfuscation is the deliberate act of creating obfuscated code, i.e. source or machine code that is difficult for humans to understand. It is something similar to encryption, but a machine can understand the code and is able to execute: it.
